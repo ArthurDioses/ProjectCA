@@ -1,14 +1,11 @@
 package com.example.arthur.projectca.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.arthur.projectca.R;
 import com.example.arthur.projectca.internal.di.component.ActivityComponent;
 import com.example.arthur.projectca.internal.di.component.DaggerActivityComponent;
-import com.example.arthur.projectca.internal.di.component.DaggerApplicationComponent;
 import com.example.arthur.projectca.internal.di.module.ActivityModule;
-import com.example.arthur.projectca.internal.di.module.ApplicationModule;
 
 public class MainActivity extends BaseActivity {
 

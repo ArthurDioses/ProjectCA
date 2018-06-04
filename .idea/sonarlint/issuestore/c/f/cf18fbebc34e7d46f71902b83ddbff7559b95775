@@ -1,6 +1,3 @@
 
 csquid:CallToDeprecatedMethod"6Remove this use of "activityModule"; it is deprecated.(õÃÖÚ8Óş—æ»,
-‡squid:UselessImportCheck"^Remove this unused import 'com.example.arthur.projectca.internal.di.module.ApplicationModule'.(’Ìı8Óş—æ»,
-ssquid:UselessImportCheck"ERemove this unused import 'android.support.v7.app.AppCompatActivity'.(«Û®ûüÿÿÿÿ8Óş—æ»,
-˜squid:UselessImportCheck"jRemove this unused import 'com.example.arthur.projectca.internal.di.component.DaggerApplicationComponent'.(Ùº–€úÿÿÿÿ8Óş—æ»,
 jsquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(‘Ù±8Óş—æ»,

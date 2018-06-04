@@ -8,5 +8,6 @@ import rx.Observable;
 
 public interface FirebaseDB {
     Observable<DataSnapshot> observeValueEvent(Query query);
-
+    Observable<DataSnapshot> observeSingleValueEvent(Query query);
+    Observable<FirebaseChildEvent<DataSnapshot>> observeChildEvent(Query query);
 }

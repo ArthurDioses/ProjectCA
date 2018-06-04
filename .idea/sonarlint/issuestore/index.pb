@@ -75,3 +75,9 @@ t
 Ddata/src/main/java/com/example/data/network/firebase/References.java,e/f/ef58eb0a98b07d041fb76aaa4cdf4934881e0bcc
 x
 Hdata/src/main/java/com/example/data/network/firebase/FirebaseDBImpl.java,b/e/be73fbc2b0f017255862295ea49e56f55eee74ed
+
+Opresentation/src/main/java/com/example/arthur/projectca/model/MessageModel.java,9/d/9d38664c88f6e257ad3e702023e3865694e7c8bc
+e
+5presentation/src/main/res/layout/activity_sign_in.xml,c/a/caec0b1c335d8ade8127b05bb054a36e3156e089
+‰
+Ypresentation/src/main/java/com/example/arthur/projectca/view/activity/SignInActivity.java,c/c/cce1970bc1fb766a3730b6a07ce201e395e84f78

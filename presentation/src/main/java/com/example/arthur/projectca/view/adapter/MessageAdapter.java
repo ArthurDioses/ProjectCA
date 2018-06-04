@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.arthur.projectca.R;
+import com.example.arthur.projectca.model.MessageModel;
 import com.example.data.entity.MessageEntity;
 
 
@@ -19,7 +20,7 @@ import butterknife.ButterKnife;
 
 public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-    private List<MessageEntity> messageEntityList;
+    private List<MessageModel> messageModelList;
     private Context context;
 
     public MessageAdapter() {
@@ -34,12 +35,12 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((MessageViewHolder)holder).bindMessage(messageEntityList.get(position));
+        ((MessageViewHolder)holder).bindMessage(messageModelList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return messageEntityList.size();
+        return messageModelList.size();
     }
     class MessageViewHolder extends RecyclerView.ViewHolder{
 
@@ -53,10 +54,10 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
-        private void bindMessage(MessageEntity messageEntity)
+        private void bindMessage(MessageModel messageModel)
         {
-            tvTitle.setText(messageEntity.getText());
-            tvDescription.setText(messageEntity.getDescription());
+            tvTitle.setText(messageModel.getTitle());
+            tvDescription.setText(messageModel.getDescription());
         }
     }
 }

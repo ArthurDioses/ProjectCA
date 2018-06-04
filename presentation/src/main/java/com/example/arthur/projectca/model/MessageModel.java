@@ -1,6 +1,6 @@
-package com.example.data.entity;
+package com.example.arthur.projectca.model;
 
-public class MessageEntity {
+public class MessageModel {
     private String id;
     private String title;
     private String description;
