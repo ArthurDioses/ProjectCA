@@ -9,17 +9,22 @@ import com.example.domain.repository.MessageRepository;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import rx.Observable;
 
-public class MessageDataRepository implements MessageRepository{
+@Singleton
+public class MessageDataRepository implements MessageRepository {
     private final FirebaseDB database;
 
+    @Inject
     public MessageDataRepository() {
         this.database = new FirebaseDBImpl();
     }
 
     @Override
-    public Observable<List<Message>> listMessage() {
+    public Observable<List<Message>> messages() {
         return database.observeValueEvent(References.getMessageReference()).map(DataSnapshotMapper.listOf(Message.class));
     }
 }

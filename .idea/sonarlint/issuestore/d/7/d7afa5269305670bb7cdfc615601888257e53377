@@ -1,3 +1,3 @@
 
-9squid:S1118"Hide this public constructor.(¢ÔŠ8ØŸæ»,
-squid:S1319"sThe return type of this method should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ÚÕ’8ØŸæ»,
+squid:S1319"sThe return type of this method should be an interface such as "Map" rather than the implementation "LinkedHashMap".(ÚÕ’8Ä¥Ñ‹½,
+9squid:S1118"Hide this public constructor.(¢ÔŠ8Ä¥Ñ‹½,

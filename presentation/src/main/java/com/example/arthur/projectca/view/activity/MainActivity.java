@@ -6,6 +6,10 @@ import com.example.arthur.projectca.R;
 import com.example.arthur.projectca.internal.di.component.ActivityComponent;
 import com.example.arthur.projectca.internal.di.component.DaggerActivityComponent;
 import com.example.arthur.projectca.internal.di.module.ActivityModule;
+import com.example.arthur.projectca.navigation.Navigator;
+
+
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
@@ -25,5 +29,10 @@ public class MainActivity extends BaseActivity {
                 .applicationComponent(getAndroidApplication().getApplicationComponent())
                 .activityModule(new ActivityModule(this))
                 .build();
+    }
+    @OnClick(R.id.btn_next_activity)
+    public void btnNextActivity()
+    {
+        Navigator.navigateToMessageActivity(this);
     }
 }

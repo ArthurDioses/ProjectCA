@@ -1,4 +1,5 @@
 
-squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(”ôşÄ8ÛÊ‘æ»,
-qsquid:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(êİç8ÛÊ‘æ»,
-ksquid:UselessImportCheck"BRemove this unused import 'com.example.data.entity.MessageEntity'.(òÓÛ¯8ñõÙä¼,
+qsquid:S1450"VRemove the "context" field and declare it as a local variable in the relevant methods.(êİç8¯Û•Œ½,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ûğÅ°8¯Û•Œ½,
+Osquid:S1172"3Remove this unused method parameter "messageModel".(â˜Ñ8¯Û•Œ½,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(”ôşÄ8¯Û•Œ½,

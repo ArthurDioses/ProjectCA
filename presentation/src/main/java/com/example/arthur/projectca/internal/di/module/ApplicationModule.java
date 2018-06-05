@@ -5,8 +5,10 @@ import android.content.Context;
 import com.example.arthur.projectca.AndroidApplication;
 import com.example.arthur.projectca.UIThread;
 import com.example.data.executor.JobExecutor;
+import com.example.data.repository.MessageDataRepository;
 import com.example.domain.executor.PostExecutionThread;
 import com.example.domain.executor.ThreadExecutor;
+import com.example.domain.repository.MessageRepository;
 
 import javax.inject.Singleton;
 
@@ -45,6 +47,12 @@ public class ApplicationModule {
     PostExecutionThread providePostExecutionThread(UIThread uiThread)
     {
         return uiThread;
+    }
+
+    @Provides
+    @Singleton
+    MessageRepository provideMessageRepository(MessageDataRepository repository){
+        return repository;
     }
 
 }

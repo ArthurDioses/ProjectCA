@@ -9,8 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.arthur.projectca.R;
-import com.example.arthur.projectca.model.MessageModel;
-import com.example.data.entity.MessageEntity;
+import com.example.arthur.projectca.model.MessageListViewModel;
 
 
 import java.util.List;
@@ -20,7 +19,7 @@ import butterknife.ButterKnife;
 
 public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-    private List<MessageModel> messageModelList;
+    private List<MessageListViewModel> messageModelList;
     private Context context;
 
     public MessageAdapter() {
@@ -54,10 +53,10 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
-        private void bindMessage(MessageModel messageModel)
+        private void bindMessage(MessageListViewModel messageModel)
         {
-            tvTitle.setText(messageModel.getTitle());
-            tvDescription.setText(messageModel.getDescription());
+        //    tvTitle.setText(messageModel.getTitle());
+        //    tvDescription.setText(messageModel.getDescription());
         }
     }
 }

@@ -17,7 +17,6 @@ import rx.functions.Action0;
 import rx.subscriptions.Subscriptions;
 
 public class FirebaseDBImpl implements FirebaseDB {
-    private Context context;
 
     @Override
     public Observable<DataSnapshot> observeValueEvent(final Query query) {

@@ -11,7 +11,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class JobExecutor implements ThreadExecutor {
 
     private static final int INITIAL_POOL_SIZE = 3;
