@@ -8,5 +8,9 @@ import java.util.List;
 import rx.Observable;
 
 public interface MessageRepository {
-Observable<List<Message>> messages();
+    Observable<List<Message>> messages();
+
+    Observable<Message> message();
+
+    Observable<Void>sendMessage(String message);
 }

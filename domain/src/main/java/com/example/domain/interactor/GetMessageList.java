@@ -20,6 +20,7 @@ public class GetMessageList extends UseCase {
 
     @Override
     protected Observable buildUseCaseObservable() {
-        return repository.messages();
+//        return repository.messages();
+        return repository.message();
     }
 }

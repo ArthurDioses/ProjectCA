@@ -22,7 +22,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private List<MessageListViewModel> messageModelList;
     private Context context;
 
-    public MessageAdapter() {
+    public MessageAdapter(List<MessageListViewModel> messageModelList) {
+        this.messageModelList = messageModelList;
     }
 
     @NonNull
@@ -49,14 +50,14 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         @BindView(R.id.tvDescription)
         TextView tvDescription;
 
-        public MessageViewHolder(View itemView) {
+         MessageViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
         private void bindMessage(MessageListViewModel messageModel)
         {
-        //    tvTitle.setText(messageModel.getTitle());
-        //    tvDescription.setText(messageModel.getDescription());
+            tvTitle.setText(messageModel.getMessages().get(0).getTitle());
+            tvDescription.setText(messageModel.getMessages().get(0).getDescription());
         }
     }
 }

@@ -5,19 +5,22 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.example.arthur.projectca.R;
+import com.example.arthur.projectca.navigation.Navigator;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MessageActivity extends BaseActivity {
 
-    @BindView(R.id.btn_Message)
-    Button btnMessage;
+//    @BindView(R.id.btn_Message)
+//    Button btnMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
         injectView(this);
+        Navigator.navigateToMessageListFragment(getSupportFragmentManager());
     }
 
     public static Intent getCallingIntent(Context context) {
@@ -26,6 +29,6 @@ public class MessageActivity extends BaseActivity {
 //    @OnClick(R.id.btn_Message)
 //    public  void onMessageListButton(){
 //        btnMessage.setSelected(true);
-//        Navigator.navigateToPlanetListFragment(getSupportFragmentManager());
+//        Navigator.navigateToMessageListFragment(getSupportFragmentManager());
 //    }
 }

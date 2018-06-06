@@ -1,6 +1,5 @@
 package com.example.data.network.firebase;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -81,26 +80,26 @@ public class FirebaseDBImpl implements FirebaseDB {
             public void call(final Subscriber<? super FirebaseChildEvent<DataSnapshot>> subscriber) {
                 final ChildEventListener childEventListener = query.addChildEventListener(new ChildEventListener() {
                     @Override
-                    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
+                    public void onChildAdded(DataSnapshot dataSnapshot,  String previousChildName) {
                         if(isSubscribed(subscriber,query,this))
                         {
-                            subscriber.onNext(new FirebaseChildEvent<DataSnapshot>(dataSnapshot.getKey(),
+                            subscriber.onNext(new FirebaseChildEvent<>(dataSnapshot.getKey(),
                                     dataSnapshot, previousChildName,FirebaseChildEvent.EventType.ADDED));
                         }
                     }
 
                     @Override
-                    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
+                    public void onChildChanged(DataSnapshot dataSnapshot,  String previousChildName) {
                         if(isSubscribed(subscriber,query,this)){
-                            subscriber.onNext(new FirebaseChildEvent<DataSnapshot>(dataSnapshot.getKey(),
+                            subscriber.onNext(new FirebaseChildEvent<>(dataSnapshot.getKey(),
                                     dataSnapshot,previousChildName, FirebaseChildEvent.EventType.CHANGED));
                         }
                     }
 
                     @Override
-                    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
                         if(isSubscribed(subscriber,query,this)){
-                            subscriber.onNext(new FirebaseChildEvent<DataSnapshot>(dataSnapshot.getKey(),
+                            subscriber.onNext(new FirebaseChildEvent<>(dataSnapshot.getKey(),
                                     dataSnapshot,FirebaseChildEvent.EventType.REMOVED));
                         }
                     }
@@ -108,7 +107,7 @@ public class FirebaseDBImpl implements FirebaseDB {
                     @Override
                     public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
                         if(isSubscribed(subscriber,query,this)){
-                            subscriber.onNext(new FirebaseChildEvent<DataSnapshot>(dataSnapshot.getKey(),
+                            subscriber.onNext(new FirebaseChildEvent<>(dataSnapshot.getKey(),
                                     dataSnapshot,previousChildName,FirebaseChildEvent.EventType.MOVED));
                         }
                     }
@@ -140,7 +139,7 @@ public class FirebaseDBImpl implements FirebaseDB {
 
     private boolean isSubscribed(Subscriber subscriber, Query query, ChildEventListener listener) {
         if (subscriber.isUnsubscribed()) {
-            query.addChildEventListener(listener);
+            query.removeEventListener(listener);
             return false;
         }
         return true;

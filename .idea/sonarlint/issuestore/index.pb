@@ -107,3 +107,5 @@ Qpresentation/src/main/java/com/example/arthur/projectca/view/MessageListView.ja
 Zpresentation/src/main/java/com/example/arthur/projectca/view/activity/MessageActivity.java,8/6/8623f65208ec5f52bfbc1dc2823e4fb770caf9b8
 Ž
 ^presentation/src/main/java/com/example/arthur/projectca/view/fragment/MessageListFragment.java,f/3/f3b19e46e20782cc600681484e2fc405e2f1e3a6
+|
+Ldata/src/main/java/com/example/data/exception/FirebaseDataCastException.java,9/c/9cd7f35985993df387f00af2ae46e2861cbc09fb

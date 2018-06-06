@@ -2,10 +2,11 @@ package com.example.arthur.projectca.view.fragment;
 
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,10 @@ import com.example.arthur.projectca.internal.di.module.MessageModule;
 import com.example.arthur.projectca.model.MessageListViewModel;
 import com.example.arthur.projectca.presenter.MessageListPresenter;
 import com.example.arthur.projectca.view.MessageListView;
+import com.example.arthur.projectca.view.adapter.MessageAdapter;
 import com.example.domain.model.Message;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -30,10 +34,17 @@ public class MessageListFragment extends BaseFragment implements MessageListView
     @BindView(R.id.tvTest)
     TextView tvTest;
 
+    @BindView(R.id.rvMessage)
+    RecyclerView rvMessage;
+
     @Inject
     MessageListPresenter presenter;
 
     MessageFragmentComponent component;
+
+    MessageAdapter adapter;
+
+    private List<Message> mMessage;
 
     public static MessageListFragment newInstance() {
         return new MessageListFragment();
@@ -82,14 +93,23 @@ public class MessageListFragment extends BaseFragment implements MessageListView
 
         }
         tvTest.setText(messageSB.toString());
+
+        Log.d("TAG", "renderList: meesage : "+messageSB.toString());
     }
 
     @Override
     public void initUI() {
+        setupReyclerView();
         presenter.getMessages();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void setupReyclerView() {
+        rvMessage.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvMessage.setHasFixedSize(true);
+
+        rvMessage.setAdapter(adapter);
+    }
+
     @Override
     public Context context() {
         return getContext();
